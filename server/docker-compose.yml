@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  udp-socket-db:
+    container_name: udp-socket-db
+    restart: always
+    image: postgres
+    ports:
+      - "5435:5432"
+    environment:
+      - POSTGRES_USER=matheus
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=udp-socket-db
+    volumes: 
+      - ./db-data:/var/lib/postgresql/data
+
+  udp-socket-server:
+    container_name: udp-socket-server
+    build: .
+    ports:
+      - "41234:41234/udp"
+    depends_on:
+      - udp-socket-db
+
+

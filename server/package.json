@@ -1,0 +1,26 @@
+{
+  "name": "upd-socket-server",
+  "version": "1.0.0",
+  "description": "A UDP socket server",
+  "main": "app.ts",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon --watch './' --exec 'ts-node app.ts' -e ts"
+  },
+  "author": "Matheus Mallmann",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/uuid": "^9.0.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "pg": "^8.8.0",
+    "uuid": "^9.0.0"
+  }
+}
